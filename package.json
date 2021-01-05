@@ -1,0 +1,63 @@
+{
+  "name": "posted",
+  "version": "1.0.0",
+  "description": "A minimal electron application to have a post-it on the fly.",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron --enable-transparent-visuals --disable-gpu .",
+    "build:windows": "electron-packager . post-it --platform=win32 --asan --overwrite",
+    "build:linux": "electron-packager . post-it --platform=linux --asan --overwrite"
+  },
+  "devDependencies": {
+    "electron": "^11.1.1",
+    "electron-installer-snap": "^5.1.0",
+    "electron-reloader": "^1.1.0",
+    "prettier": "^2.2.1",
+    "xo": "^0.37.1"
+  },
+  "dependencies": {
+    "electron-context-menu": "^2.3.1",
+    "electron-store": "^6.0.1"
+  },
+  "repository": "https://github.com/ThanosDi/post-it",
+  "keywords": [
+    "Electron",
+    "post-it",
+    "proof of concept"
+  ],
+  "author": "ThanosDi",
+	"license": "CC0-1.0",
+	"prettier": {
+		"arrowParens": "avoid"
+	},
+	"xo": {
+		"prettier": true,
+		"envs": [
+			"browser",
+			"mocha",
+			"jest"
+		],
+		"rules": {
+			"import/no-unassigned-import": "off",
+			"node/prefer-global/console": "off",
+			"import/no-anonymous-default-export": "off",
+			"eslint-comments/no-unused-disable": "off",
+			"unicorn/prefer-query-selector": "off",
+			"unicorn/no-reduce": "off",
+			"unicorn/no-fn-reference-in-iterator": "off",
+			"camelcase": [
+				1
+			],
+			"capitalized-comments": "off",
+			"no-unused-vars": "off",
+			"@typescript-eslint/no-unused-vars": [
+				"warn",
+				{
+					"args": "all",
+					"argsIgnorePattern": "(^_$)|(^__)|(req)|(res)|(next)",
+					"varsIgnorePattern": "(^_$)|(^__)"
+				}
+			]
+		}
+	}
+}
