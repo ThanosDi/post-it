@@ -24,7 +24,7 @@ function createWindow() {
     x: store.get("posted-position-x") || x,
     y: store.get("posted-position-y") || y,
     acceptFirstMouse: true,
-    autoHideMenuBar: false,
+    autoHideMenuBar: true,
     resizable: true,
     transparent: true,
     frame: false,
