@@ -2,19 +2,29 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-	<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-	<link rel="stylesheet" type="text/css" href="./styles.css">
-	<title>Post It</title>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Post It</title>
 </head>
 
-
 <body>
-	<div id="pin"></div>
-	<textarea contentEditable name="postit" id="postit" cols="30" rows="10"></textarea>
-	<script src="./renderer.js"></script>
+    <div id="pin"></div>
+    <div id="app">
+        <textarea contentEditable name="postit" id="postit" cols="30" rows="10"></textarea>
+        <div id="menu">
+            <div class="align" id="align-left"></div>
+            <div class="align" id="align-center"></div>
+            <div class="align" id="align-right"></div>
+            <div id="last-edited">Last edited:
+                <span></span>
+            </div>
+            <div id="word-count"></div>
+        </div>
+    </div>
+    <script src="./renderer.js"></script>
 </body>
 
 </html>

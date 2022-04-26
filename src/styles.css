@@ -1,51 +1,131 @@
+html {
+    height: 100%;
+}
+
 body {
-	padding: 0px;
-	background-color: transparent;
-	margin: 0px;
-	background: transparent;
+    padding: 0px;
+    background-color: transparent;
+    margin: 0px;
+    background: transparent;
+    overflow: hidden;
+    height: 100%;
 }
 
 #pin {
-	-webkit-user-select: auto;
-	-webkit-app-region: drag;
-	width: 40px;
-	height: 40px;
-	margin: auto;
-	background-image: url('./pin.png');
-	background-size: cover;
-	cursor: grab;
-	position: relative;
-	top: 30px;
-	z-index: 999;
-	left: 10px;
+    -webkit-user-select: auto;
+    -webkit-app-region: drag;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-image: url('./pin.png');
+    background-size: cover;
+    cursor: grab;
+    position: relative;
+    top: 30px;
+    z-index: 999;
+    left: 10px;
+}
+
+#app {
+    resize: none;
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+    height: 100%;
+    font-size: x-large;
+    text-align: center;
+    background: #ffc;
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    -moz-transition: -moz-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -webkit-transition: -webkit-transform .15s linear;
+    position: relative;
+    overflow: hidden;
+
 }
 
 textarea {
-	resize: none;
-	width: 90%;
-	display: block;
-	margin: 10px auto;
-	height: 330px;
-	font-size: x-large;
-	text-align: center;
-	background: #ffc;
-	-moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
-	-webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-	box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-	-moz-transition: -moz-transform .15s linear;
-	-o-transition: -o-transform .15s linear;
-	-webkit-transition: -webkit-transform .15s linear;
-	-o-transform: rotate(1deg);
-	-webkit-transform: rotate(1deg);
-	-moz-transform: rotate(1deg);
-	position: relative;
-	top: 5px;
+    resize: none;
+    width: 100%;
+    display: inline-block;
+    height: 90%;
+    font-size: x-large;
+    text-align: center;
+    background: #ffc;
+    overflow-x: hidden;
+    position: relative;
+    padding-top: 15px;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 textarea:focus {
-	-moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-	-webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-	box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
-	position: relative;
-	z-index: 5;
+
+    position: relative;
+    z-index: 5;
+}
+
+textarea:hover~#menu, #menu:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+#menu {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    padding-left: 10px;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+}
+
+.align {
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.align:hover {
+    opacity: 0.5;
+}
+
+#align-left {
+    background-image: url('./align-left.png');
+}
+
+#align-center {
+    background-image: url('./align-center.png');
+}
+
+#align-right {
+    background-image: url('./align-right.png');
+}
+
+#last-edited {
+    flex-grow: 1;
+    font-size: 18px;
+}
+
+#word-count {
+    background-color: transparent;
+    min-width: 30px;
+    bottom: 0px;
+    right: 0;
+    position: absolute;
+    z-index: 100000;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    padding-right: 15px;
 }
