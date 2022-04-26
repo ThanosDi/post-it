@@ -21,6 +21,7 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width,
     height,
+    "node-integration": true,
     x: store.get("posted-position-x") || x,
     y: store.get("posted-position-y") || y,
     acceptFirstMouse: true,
@@ -51,6 +52,7 @@ function createWindow() {
     const [x, y] = mainWindow.getPosition();
     store.set("posted-position-x", x);
     store.set("posted-position-y", y);
+    mainWindow = null;
   });
   // Add close item to the context menu
   contextMenu({
@@ -66,7 +68,7 @@ function createWindow() {
   });
 }
 
-app.whenReady().then(() => setTimeout(createWindow, 10));
+// app.whenReady().then(() => setTimeout(createWindow, 500));
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -74,3 +76,10 @@ app.whenReady().then(() => setTimeout(createWindow, 10));
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
+
+if (process.platform === "linux") {
+  app.commandLine.appendSwitch("enable-transparent-visuals");
+  app.disableHardwareAcceleration();
+
+  app.on("ready", () => setTimeout(createWindow, 400));
+}

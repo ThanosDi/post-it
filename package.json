@@ -5,8 +5,8 @@
     "main": "./src/main.js",
     "scripts": {
         "start": "electron --enable-transparent-visuals --disable-gpu .",
-        "build:windows": "electron-packager . post-it --platform=win32 --asan --overwrite",
-        "build:linux": "electron-packager . post-it --platform=linux --asan --overwrite"
+        "build:windows": "electron-packager . post-it --platform=win32 --asan --overwrite --ignore=\"^\/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-win32-x64.zip ./post-it-win32-x64/ && rm -rf ./post-it-win32-x64/",
+        "build:linux": "electron-packager . post-it --platform=linux --asan --overwrite --ignore=\"^\/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-linux-x64.zip ./post-it-linux-x64/ && rm -rf ./post-it-linux-x64/"
     },
     "devDependencies": {
         "electron": "^11.1.1",
@@ -26,8 +26,7 @@
     "repository": "https://github.com/ThanosDi/post-it",
     "keywords": [
         "Electron",
-        "post-it",
-        "proof of concept"
+        "post-it"
     ],
     "author": "ThanosDi",
     "license": "CC0-1.0",
