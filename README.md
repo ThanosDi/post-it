@@ -1,12 +1,20 @@
 # Post it
-![post it](./postit.png "Post it")
+![post it](./postit.jpg "Post it")
 
-This is minimal sticky note that appears on top of other windows and it's draggable.
+This is minimal sticky note that appears on top of other windows.
 
-Remembers text and the last closed position.
+Features:
+ - Auto save text
+ - Draggable
+ - Appears on top of other windows
+ - Text alignment
+ - Last edited date
+ - Character count
 
 
-### Less is more.
+Let me know if you need any other additions.
+
+Enjoy :)
 
 ---
 
@@ -38,3 +46,6 @@ yarn run
 yarn build:linux
 yarn build:windows
 ```
+
+
+#### Less is more.
