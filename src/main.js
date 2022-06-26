@@ -67,7 +67,8 @@ function createWindow() {
     ],
   });
 }
-
+app.commandLine.appendSwitch("in-process-gpu");
+app.on("ready", () => setTimeout(createWindow, 400));
 // app.whenReady().then(() => setTimeout(createWindow, 500));
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -80,6 +81,4 @@ app.on("window-all-closed", () => {
 if (process.platform === "linux") {
   app.commandLine.appendSwitch("enable-transparent-visuals");
   app.disableHardwareAcceleration();
-
-  app.on("ready", () => setTimeout(createWindow, 400));
 }
