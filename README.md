@@ -22,7 +22,7 @@ Enjoy :)
 ### [Linux](https://drive.google.com/file/d/1di53vmAYfZMIWS_a4cHcaY4e2vkdeKaT/view?usp=sharing "Linux")
 Extract, enter the folder and run in terminal `./post-it --enable-transparent-visuals --disable-gpu`
 
-### [Windows](https://drive.google.com/file/d/1M9fyAtmLq_1-qPoA8x60x4-j_efkLuOJ/view?usp=sharing "Windows")
+### [Windows](https://drive.google.com/file/d/1kB8y2qUBoiIW_lwdlA_BRVyxuJPzlm8T/view?usp=sharing "Windows")
 
 Extract, enter the folder and open `post-it.exe`
 
