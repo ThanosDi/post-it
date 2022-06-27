@@ -4,7 +4,7 @@
     "description": "A minimal electron application to have a post-it on the fly.",
     "main": "./src/main.js",
     "scripts": {
-        "start": "electron --enable-transparent-visuals --disable-gpu .",
+        "start": "electron  --no-sandbox --enable-transparent-visuals --disable-gpu .",
         "build:windows": "electron-packager . post-it --platform=win32 --asan --overwrite --ignore=\"^\/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-win32-x64.zip ./post-it-win32-x64/ && rm -rf ./post-it-win32-x64/",
         "build:linux": "electron-packager . post-it --platform=linux --asan --overwrite --ignore=\"^\/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-linux-x64.zip ./post-it-linux-x64/ && rm -rf ./post-it-linux-x64/"
     },

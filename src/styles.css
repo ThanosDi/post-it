@@ -47,7 +47,6 @@ body {
 #app {
     display: flex;
     flex-direction: column;
-    /* justify-content: stretch; */
     width: 100%;
     margin: 10px auto;
     height: 100%;
@@ -70,12 +69,10 @@ textarea {
     width: 100%;
     display: inline-block;
     flex-grow: 2;
-    /* height: 100%; */
     font-size: x-large;
     text-align: center;
     background: #ffc;
     overflow-x: hidden;
-    /* position: relative; */
     padding-top: 15px;
     border: none;
     overflow: auto;
@@ -99,15 +96,15 @@ textarea:hover~#menu, #menu:hover {
 
 #menu {
     border-top: 1px solid black;
-    /* position: absolute; */
-    bottom: 50px;
-    width: 100%;
+    flex-grow: 1;
+    flex-wrap: nowrap;
     display: flex;
     padding-top: 5px;
     padding-left: 10px;
-    z-index: 99999;
+    z-index: 99999999;
     visibility: hidden;
     opacity: 0;
+    justify-content: space-between;
     transition: visibility 0s, opacity 0.2s linear;
     background-color: #ffc;
 }
@@ -143,10 +140,6 @@ textarea:hover~#menu, #menu:hover {
 
 #word-count {
     background-color: transparent;
-    min-width: 30px;
-    bottom: 0px;
-    right: 0;
-    position: absolute;
     z-index: 100000;
     font-size: 14px;
     text-align: center;
