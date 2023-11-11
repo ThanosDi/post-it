@@ -4,23 +4,23 @@
     "description": "A minimal electron application to have a post-it on the fly.",
     "main": "./src/main.js",
     "scripts": {
-        "start": "electron  --no-sandbox --enable-transparent-visuals --disable-gpu .",
-        "build:windows": "electron-packager . post-it --platform=win32 --asan --overwrite --ignore=\"^\/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-win32-x64.zip ./post-it-win32-x64/ && rm -rf ./post-it-win32-x64/",
-        "build:linux": "electron-packager . post-it --platform=linux --asan --overwrite --ignore=\"^\/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-linux-x64.zip ./post-it-linux-x64/ && rm -rf ./post-it-linux-x64/"
+        "start": "electron --no-sandbox --enable-transparent-visuals --disable-gpu .",
+        "build:windows": "electron-packager . post-it --platform=win32 --asan --overwrite --ignore=\"^/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-win32-x64.zip ./post-it-win32-x64/ && rm -rf ./post-it-win32-x64/",
+        "build:linux": "electron-packager . post-it --platform=linux --asan --overwrite --ignore=\"^/(postit.jpg|README.md|yarn.lock|LICENSE.md|.prettierrc|.gitignore|post-it-win32-x64/|post-it-linux-x64/|post-it-linux-x64.zip|post-it-win32-x64.zip)\" && zip -r post-it-linux-x64.zip ./post-it-linux-x64/ && rm -rf ./post-it-linux-x64/"
     },
     "devDependencies": {
-        "electron": "^11.1.1",
-        "electron-installer-snap": "^5.1.0",
-        "electron-packager": "^15.5.1",
+        "electron": "^27.0.4",
+        "electron-installer-snap": "^5.2.0",
+        "electron-packager": "^17.1.2",
         "electron-packager-dummy-wine": "^1.1.0",
-        "electron-reloader": "^1.1.0",
+        "electron-reloader": "^1.2.3",
         "prettier": "^2.2.1",
         "xo": "^0.37.1"
     },
     "dependencies": {
         "debounce": "^1.2.1",
-        "electron-context-menu": "^2.3.1",
-        "electron-store": "^6.0.1",
+        "electron-context-menu": "^3.6.1",
+        "electron-store": "^8.1.0",
         "moment-timezone": "^0.5.34"
     },
     "repository": "https://github.com/ThanosDi/post-it",

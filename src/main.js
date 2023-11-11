@@ -1,5 +1,5 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, screen } = require("electron");
+const { app, BrowserWindow, screen, globalShortcut, remote } = require("electron");
 const path = require("path");
 const contextMenu = require("electron-context-menu");
 const Store = require("electron-store");
@@ -18,7 +18,7 @@ function createWindow() {
   const screenHeight = display.bounds.height;
   const x = screenWidth - width;
   const y = screenHeight / 2 - height / 2;
-  const mainWindow = new BrowserWindow({
+  let mainWindow = new BrowserWindow({
     width,
     height,
     "node-integration": true,
@@ -31,11 +31,12 @@ function createWindow() {
     frame: false,
     movable: true,
     hasShadow: false,
-    alwaysOnTop: true,
+    alwaysOnTop: false,
     vibrancy: "ultra-dark",
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
+      contextIsolation: false,
     },
   });
 
@@ -76,7 +77,15 @@ function createWindow() {
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
-
+app.on("ready", () => {
+    // Let user always send message to control bar window with channel 'Ctrl+Shift+s'.
+    globalShortcut.register('Ctrl+Shift+a', () => {
+        const  window = BrowserWindow.getFocusedWindow();
+        const isOnTop = !window.isAlwaysOnTop()
+        window.setAlwaysOnTop(isOnTop, "normal");
+        window.reload();
+    });
+});
 if (process.platform === "linux") {
   app.on("ready", () => setTimeout(createWindow, 400));
   app.commandLine.appendSwitch("enable-transparent-visuals");

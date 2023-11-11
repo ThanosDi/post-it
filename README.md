@@ -6,7 +6,7 @@ This is minimal sticky note that appears on top of other windows.
 Features:
  - Auto save text
  - Draggable
- - Appears on top of other windows
+ - Can appear on top of other windows(press Ctrl+Shift+A to toggle)
  - Text alignment
  - Last edited date
  - Character count
